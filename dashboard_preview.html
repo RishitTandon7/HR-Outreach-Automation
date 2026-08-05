@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Outreach Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1117; --card: #171a23; --border: #2a2e3a;
+    --text: #e5e7eb; --muted: #9ca3af;
+    --blue: #3b82f6; --green: #22c55e; --yellow: #eab308;
+    --red: #ef4444; --gray: #6b7280;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, Segoe UI, Arial, sans-serif;
+    margin: 0; padding: 32px;
+  }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+  .cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px; margin-bottom: 32px;
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px;
+  }
+  .card .num { font-size: 28px; font-weight: 700; }
+  .card .label { color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+  .card.blue .num { color: var(--blue); }
+  .card.green .num { color: var(--green); }
+  .card.yellow .num { color: var(--yellow); }
+  .card.red .num { color: var(--red); }
+  .card.gray .num { color: var(--gray); }
+  .grid2 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; margin-bottom: 32px; }
+  @media (max-width: 900px) { .grid2 { grid-template-columns: 1fr; } }
+  .panel {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px;
+  }
+  .panel h2 { font-size: 14px; margin: 0 0 14px 0; color: var(--text); }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th { text-align: left; color: var(--muted); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  td { padding: 6px 8px; border-bottom: 1px solid #1f2330; }
+  .badge { padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .badge-replied { background: rgba(34,197,94,0.15); color: var(--green); }
+  .badge-awaiting-reply { background: rgba(59,130,246,0.15); color: var(--blue); }
+  .badge-ghosted { background: rgba(234,179,8,0.15); color: var(--yellow); }
+  .badge-bounced { background: rgba(239,68,68,0.15); color: var(--red); }
+  .badge-not-started { background: rgba(107,114,128,0.15); color: var(--gray); }
+  .updated { color: var(--muted); font-size: 11.5px; margin-top: 24px; }
+</style>
+</head>
+<body>
+  <h1>HR Outreach Dashboard</h1>
+  <div class="subtitle">Generated 2026-08-25 &middot; 2064 total contacts</div>
+
+  <div class="cards">
+    <div class="card blue"><div class="num">0</div><div class="label">Sent</div></div>
+    <div class="card green"><div class="num">0</div><div class="label">Replied (0.0%)</div></div>
+    <div class="card yellow"><div class="num">0</div><div class="label">Ghosted (0.0%)</div></div>
+    <div class="card blue"><div class="num">0</div><div class="label">Awaiting reply</div></div>
+    <div class="card red"><div class="num">0</div><div class="label">Bounced</div></div>
+    <div class="card gray"><div class="num">2064</div><div class="label">Not started yet</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h2>By tier</h2>
+      <table>
+        <thead>
+          <tr><th>Tier</th><th>Contacted</th><th>Replied</th><th>Awaiting</th><th>Ghosted</th><th>Bounced</th><th>Not started</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Tier 0 - Priority</td>
+          <td>223</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>223</td>
+        </tr>
+        <tr>
+          <td>Tier 1 - Product/MNC</td>
+          <td>209</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>209</td>
+        </tr>
+        <tr>
+          <td>Tier 2 - IT Services</td>
+          <td>1548</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1548</td>
+        </tr>
+        <tr>
+          <td>Tier 3 - Staffing</td>
+          <td>84</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>84</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h2>Outcome breakdown</h2>
+      <canvas id="outcomeChart" height="220"></canvas>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Most recent sends</h2>
+    <table>
+      <thead><tr><th>Company</th><th>Contact</th><th>Date</th><th>Status</th></tr></thead>
+      <tbody><tr><td colspan="4" style="color:var(--muted)">No sends yet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="updated">Regenerate this file any time by running <code>python generate_dashboard.py</code> after the bot updates contacts.csv.</div>
+
+<script>
+const data = {"labels": ["Replied", "Awaiting reply", "Ghosted", "Bounced", "Not started"], "values": [0, 0, 0, 0, 2064]};
+new Chart(document.getElementById('outcomeChart'), {
+  type: 'doughnut',
+  data: {
+    labels: data.labels,
+    datasets: [{
+      data: data.values,
+      backgroundColor: ['#22c55e', '#3b82f6', '#eab308', '#ef4444', '#6b7280'],
+      borderColor: '#171a23',
+      borderWidth: 2,
+    }]
+  },
+  options: {
+    plugins: { legend: { position: 'bottom', labels: { color: '#e5e7eb', font: { size: 11 } } } }
+  }
+});
+</script>
+</body>
+</html>
