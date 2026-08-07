@@ -522,3 +522,4 @@
 2026-08-07 13:32:58 - Add __init__.py
 2026-08-07 10:53:38 - Add ssl_match_hostname.cpython-310.pyc
 2026-08-07 15:00:01 - Add msvc.cpython-310.pyc
+2026-08-07 13:44:29 - Add version.py
