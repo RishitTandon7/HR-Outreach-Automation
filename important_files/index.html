@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postmark — Campaign studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-mark">P</span><span>postmark</span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="#overview"><i>⌁</i>Overview</a>
+          <a class="nav-link" href="#campaigns"><i>✦</i>Campaigns <b>4</b></a>
+          <a class="nav-link" href="#audience"><i>◉</i>Audience</a>
+          <a class="nav-link" href="#analytics"><i>⌇</i>Analytics</a>
+        </nav>
+        <div class="sidebar-foot">
+          <a class="nav-link" href="#settings"><i>⚙</i>Settings</a>
+          <div class="profile"><span class="avatar">AT</span><span><strong>Aisha Thomas</strong><small>Northstar Studio</small></span><button aria-label="Profile menu">⌄</button></div>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="menu-button" aria-label="Open menu">☰</button>
+          <div class="workspace"><span>Northstar Studio</span><button>⌄</button></div>
+          <div class="top-actions"><button class="icon-button" aria-label="Search">⌕</button><button class="icon-button notice" aria-label="Notifications">♢</button><button class="help">?</button></div>
+        </header>
+
+        <section class="content" id="overview">
+          <div class="hero">
+            <div><p class="eyebrow">Monday, 30 August</p><h1>Good morning, Aisha.</h1><p class="subhead">Here’s how your messages are making an impact.</p></div>
+            <button class="create-button" id="createCampaign"><span>+</span> Create campaign</button>
+          </div>
+
+          <section class="metrics" aria-label="Campaign metrics">
+            <article class="metric-card"><div class="metric-top"><span>Messages sent</span><i class="sage">↗</i></div><strong>24,892</strong><p><b>12.4%</b> vs. last month</p><svg viewBox="0 0 280 54" preserveAspectRatio="none"><path d="M0 45 C18 42 25 48 42 39 S68 28 85 35 S111 12 129 24 S147 30 161 18 S185 26 198 12 S220 20 234 9 S254 18 280 3" /></svg></article>
+            <article class="metric-card"><div class="metric-top"><span>Open rate</span><i class="purple">↗</i></div><strong>61.8%</strong><p><b>4.2%</b> vs. industry average</p><div class="progress"><span></span></div></article>
+            <article class="metric-card"><div class="metric-top"><span>Click rate</span><i class="orange">↗</i></div><strong>14.6%</strong><p><b>2.8%</b> vs. last month</p><div class="bar-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          </section>
+
+          <section class="dashboard-grid" id="campaigns">
+            <article class="panel campaigns-panel"><div class="panel-head"><div><p class="eyebrow">Your work</p><h2>Recent campaigns</h2></div><a href="#">View all <span>→</span></a></div>
+              <div class="campaign-list">
+                <div class="campaign"><div class="campaign-icon coral">✳</div><div class="campaign-copy"><strong>Summer collection, now live</strong><span>Sent to 8,412 subscribers · Aug 28</span></div><div class="rate"><strong>64.2%</strong><span>open rate</span></div><button class="more">•••</button></div>
+                <div class="campaign"><div class="campaign-icon blue">◒</div><div class="campaign-copy"><strong>Notes from the studio #12</strong><span>Sent to 6,104 subscribers · Aug 21</span></div><div class="rate"><strong>59.8%</strong><span>open rate</span></div><button class="more">•••</button></div>
+                <div class="campaign"><div class="campaign-icon yellow">☀</div><div class="campaign-copy"><strong>Behind the scenes: River house</strong><span>Sent to 9,006 subscribers · Aug 14</span></div><div class="rate"><strong>62.7%</strong><span>open rate</span></div><button class="more">•••</button></div>
+              </div>
+            </article>
+            <article class="panel activity"><div class="panel-head"><div><p class="eyebrow">Live activity</p><h2>People are reading</h2></div><span class="live"><i></i> Live</span></div>
+              <div class="reader"><span class="avatar green">MC</span><p><b>Maya Chen</b> opened <strong>Summer collection</strong><small>Just now</small></p></div>
+              <div class="reader"><span class="avatar lilac">JS</span><p><b>Jonas Silva</b> clicked a link in <strong>Summer collection</strong><small>2 min ago</small></p></div>
+              <div class="reader"><span class="avatar peach">EP</span><p><b>Elena Park</b> opened <strong>Notes from the studio #12</strong><small>8 min ago</small></p></div>
+              <button class="activity-link">Open activity feed <span>→</span></button>
+            </article>
+          </section>
+
+          <section class="insight"><div class="insight-icon">✦</div><div><p class="eyebrow">A thoughtful nudge</p><h2>Your audience is most engaged on Tuesdays.</h2><p>Campaigns sent at 10:00 AM have an average 18% higher open rate.</p></div><button>Schedule a campaign <span>→</span></button></section>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="composer"><form method="dialog"><button class="close" aria-label="Close">×</button><p class="eyebrow">New campaign</p><h2>Bring your next message to life.</h2><label>Campaign name<input placeholder="e.g. September newsletter" autofocus /></label><label>Audience<select><option>All subscribers · 12,418</option><option>Recent customers · 4,820</option><option>Design enthusiasts · 2,106</option></select></label><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button value="default" class="create-button" id="continue">Continue <span>→</span></button></div></form></dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
