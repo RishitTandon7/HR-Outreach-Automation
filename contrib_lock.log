@@ -1661,3 +1661,4 @@
 2026-08-21 17:25:01 - Add 029-receipt.md
 2026-08-21 16:58:38 - Add 086-campaign.md
 2026-08-21 09:25:06 - Add cacert.pem
+2026-08-21 09:21:00 - Add helpers.py
