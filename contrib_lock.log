@@ -1743,3 +1743,4 @@
 2026-08-21 09:30:07 - Add winterm.py
 2026-08-21 20:40:30 - Add 036-newsletter.md
 2026-08-21 12:07:58 - Add msvc9compiler.py
+2026-08-21 12:45:13 - Add dep_util.py
